@@ -2,7 +2,21 @@
 
 //Complete this algo
 const isLoop = (linkedlist) => {
-
+    let arr = [];
+    let val = linkedlist.head.value;
+    if (arr.includes(val)) {
+        return true;
+    } else {
+        arr.push(val);
+    }
+    if (linkedlist.head.next === null) {
+        return false;
+    } else {
+        console.log('before', linkedlist)
+        linkedlist.head = linkedlist.head.next;
+        console.log('after', linkedlist)
+        return isLoop(linkedlist);
+    }
 };
 
 
